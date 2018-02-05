@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+        <title>{{.title}} - 風雨陰晴故事販賣鋪 </title>
+    </head>
+    <body>
+        <div class="flheight">
+            {{ template "content" . }}
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+        <script>
+            setInterval(function() {
+                const dateTime = Date.now();
+                const timestamp = Math.floor(dateTime / 1000);
+                document.getElementById("time").textContent= 1526054400-timestamp +" 秒";
+            },500);
+
+
+        </script>
+    </body>
+</html>
