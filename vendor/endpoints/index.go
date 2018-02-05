@@ -3,7 +3,6 @@ package endpoints
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"time"
 )
 
 //Index View

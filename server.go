@@ -12,16 +12,16 @@ import (
 func main() {
 	if len(os.Args) > 1 {
 		if os.Args[1] == "--runserver" {
+			gin.SetMode(gin.ReleaseMode)
 			route := gin.Default()
 			route.Static("/static", "./static")
 			render := eztemplate.New()
 			render.TemplatesDir = "template/"
 			render.Ext = ".tmpl"
-			render.Debug = true
 			route.HTMLRender = render.Init()
 			// route for Index
 			route.GET("/", endpoints.Index)
-			route.Run()
+			route.Run(":8509")
 		} else {
 			fmt.Println("Please use:")
 			fmt.Println("--runserver : run gin Server. ")
